@@ -10,7 +10,6 @@
   get_url:
     url: "https://bintray.com/jfrog/artifactory-pro-rpms/rpm"
     dest: /etc/yum.repos.d/bintray-jfrog-artifactory-pro-rpms.repo
-    become: true
   tags:
     - artifactory
 
