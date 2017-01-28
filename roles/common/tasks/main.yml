@@ -6,7 +6,7 @@
 #           2 - modify configuration files to use mysql server.
 #           3 - modify configuration files to use attach storage.
 
-- name: yum install prerequesites
+- name: Download and install dependency - Java 1.8
   become: yes
   become_method: sudo
   yum:
@@ -15,7 +15,7 @@
   tags:
     - artifactory
 
-- name: Download and install dependency - Java
+- name: Check dependency - Java
   action: shell /usr/bin/java -version
   register: java
   changed_when: no
