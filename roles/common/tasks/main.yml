@@ -2,9 +2,9 @@
 # ==========================
 # Artifactory can also be installed from an RPM or Debian distribution on Red Hat compatible Linux distributions.
 # The installation package creates a dedicated user, installs a stripped-down distribution of the Apache Tomcat container configured for Artifactory (on port 8081), and registers this Tomcat as a service (but does not start it immediately).
-# Iteration 1 - get ansible working and install artifactory RPM and dependencies.
-#           2 - modify configuration files to use mysql server.
-#           3 - modify configuration files to use attach storage.
+# Iteration 1 - (done) get ansible working and install artifactory RPM and dependencies.
+#           2 - (todo) modify configuration files to use mysql server.
+#           3 - (todo) modify configuration files to use attach storage.
 
 - name: Download and install dependency - Java
   become: yes
