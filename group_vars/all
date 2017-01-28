@@ -1,2 +1,5 @@
 ---
 # Variables listed here are applicable to all host groups
+required_java_version: java-1.8.0-openjdk.x86_64
+required_artifactory_version: jfrog-artifactory-pro
+required_remote_user: vagrant

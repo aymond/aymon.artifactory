@@ -6,11 +6,11 @@
 #           2 - modify configuration files to use mysql server.
 #           3 - modify configuration files to use attach storage.
 
-- name: Download and install dependency - Java 1.8
+- name: Download and install dependency - Java
   become: yes
   become_method: sudo
   yum:
-    name: java-1.8.0-openjdk.x86_64
+    name: {{ required_java_version }}
     state: latest
   tags:
     - artifactory
@@ -39,7 +39,7 @@
   become: yes
   become_method: sudo
   yum:
-    name: jfrog-artifactory-pro
+    name: {{ required_artifactory_version }}
     state: latest
   tags:
     - artifactory

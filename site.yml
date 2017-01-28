@@ -3,7 +3,7 @@
 
 - name: Apply a common configuration to all artifactoryservers nodes
   hosts: artifactoryservers
-  remote_user: vagrant
+  remote_user: {{ required_remote_user }}
 
   roles:
     - common
