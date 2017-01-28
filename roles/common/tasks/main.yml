@@ -7,29 +7,30 @@
 #           3 - modify configuration files to use attach storage.
 
 - name: Download artifactory repo file
+  become: yes
+  become_method: sudo
   get_url:
     url: "https://bintray.com/jfrog/artifactory-pro-rpms/rpm"
     dest: /etc/yum.repos.d/bintray-jfrog-artifactory-pro-rpms.repo
-    become: yes
-    become_method: sudo
+
   tags:
     - artifactory
 
 - name: Install the latest version of Artifactory
+  become: yes
+  become_method: sudo
   yum:
     name: jfrog-artifactory-pro
     state: latest
-    become: yes
-    become_method: sudo
   tags:
     - artifactory
 
 - name: Enable the artifactory service
+  become: yes
+  become_method: sudo
   service:
     name: artifactory
     enabled: true
-    become: yes
-    become_method: sudo
   tags:
     - artifactory
 
