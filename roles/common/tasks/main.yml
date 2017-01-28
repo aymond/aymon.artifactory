@@ -6,6 +6,15 @@
 #           2 - modify configuration files to use mysql server.
 #           3 - modify configuration files to use attach storage.
 
+- name: yum install prerequesites
+  become: yes
+  become_method: sudo
+  yum:
+    name: java-1.8.0-openjdk.x86_64
+    state: latest
+  tags:
+    - artifactory
+
 - name: Download and install dependency - Java
   action: shell /usr/bin/java -version
   register: java
@@ -15,15 +24,6 @@
 - assert:
     that:
       - "'version' in java.stderr"
-
-- name: yum install prerequesites
-  become: yes
-  become_method: sudo
-  yum:
-    name: java-1.8.0-openjdk.x86_64
-    state: latest
-  tags:
-    - artifactory
 
 - name: Download artifactory repo file
   become: yes
