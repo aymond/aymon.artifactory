@@ -10,7 +10,7 @@
   become: yes
   become_method: sudo
   yum:
-    name: {{ required_java_version }}
+    name: "{{ required_java_version }}"
     state: latest
   tags:
     - artifactory
@@ -39,7 +39,7 @@
   become: yes
   become_method: sudo
   yum:
-    name: {{ required_artifactory_version }}
+    name: "{{ required_artifactory_version }}"
     state: latest
   tags:
     - artifactory
