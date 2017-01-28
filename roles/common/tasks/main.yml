@@ -50,6 +50,7 @@
   service:
     name: artifactory
     enabled: true
+    state: started
   tags:
     - artifactory
 
