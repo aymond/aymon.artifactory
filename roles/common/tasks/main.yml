@@ -17,9 +17,11 @@
       - "'version' in java.stderr"
 
 - name: yum install prerequesites
+  become: yes
+  become_method: sudo
   yum:
-    name: "{{ item }}"
-    state: present
+    name: java-1.8.0-openjdk.x86_64
+    state: latest
   tags:
     - artifactory
 
