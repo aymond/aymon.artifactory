@@ -1,4 +1,4 @@
-# Artifactory RPM Installation
+# Artifactory RPM Installation playbook
 # ==========================
 # Artifactory can also be installed from an RPM or Debian distribution on Red Hat compatible Linux distributions.
 # The installation package creates a dedicated user, installs a stripped-down distribution of the Apache Tomcat container configured for Artifactory (on port 8081), and registers this Tomcat as a service (but does not start it immediately).
