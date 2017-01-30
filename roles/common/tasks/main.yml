@@ -44,6 +44,22 @@
   tags:
     - artifactory
 
+# MySQL
+# Assumes RDS already created. Default is Derby Storage, and this works out of the box.
+# 1. Copy $ARTIFACTORY_HOME/misc/db/mysql.properties to $ARTIFACTORY_HOME/etc/storage.properties
+# (If you do not have this file you can take it from the standalone zip distribution or directly from the JFrog domain). For a full explanation on the contents of this file please refer to The Bundled Storage Configurations.
+#
+# 2. Adjust the connection definitions in the $ARTIFACTORY_HOME/etc/storage.properties file to match the attributes of the Artifactory database you created.
+# You must configure the database URL and username/password to use. The schema and tables are created first time Artifactory is run using the new database.
+#
+# 3. Download the MySQL JDBC driver (available from the  MySQL website)  and copy the mysql-connector-java-<version>.jar file into the server's shared lib directory.
+#For example $TOMCAT_HOME/lib when installed as a service or $ARTIFACTORY_HOME/tomcat/lib in the standalone version.
+
+# Attach EBS Storage
+# Assumes EBS already created.
+# Default is local storage, and this works out of the box.
+
+
 - name: Enable the artifactory service
   become: yes
   become_method: sudo
@@ -53,11 +69,3 @@
     state: started
   tags:
     - artifactory
-
-
-# MySQL
-# Assumes RDS already created. Default is Derby Storage, and this works out of the box.
-
-# Attach EBS Storage
-# Assumes EBS already created.
-# Default is local storage, and this works out of the box.

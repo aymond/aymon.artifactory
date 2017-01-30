@@ -3,3 +3,5 @@
 required_java_version: java-1.8.0-openjdk.x86_64
 required_artifactory_version: jfrog-artifactory-pro
 required_remote_user: vagrant
+# not sure whether the best approach is to set an environment variable or just use a regular variable...
+ENV_ARTIFACTORY_HOMR: "/var/opt/jfrog/artifactory"
